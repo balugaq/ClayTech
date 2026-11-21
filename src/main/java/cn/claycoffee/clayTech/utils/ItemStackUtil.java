@@ -418,7 +418,7 @@ public final class ItemStackUtil {
     }
 
     public static void send(@NotNull CommandSender p, String message) {
-        p.sendMessage(color("&7[&6NetworksExpansion&7] &r" + message));
+        p.sendMessage(color("&7[&6ClayTech&7] &r" + message));
     }
 
     public static @NotNull ItemStack getPreEnchantedItemStack(@NotNull Material material) {

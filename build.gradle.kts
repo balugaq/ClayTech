@@ -7,6 +7,9 @@ plugins {
 group = "cn.claycoffee"
 version = providers.gradleProperty("version").get()
 
+// 配置期取好，避免 processResources 在执行期碰 Task.project（Gradle 10 会直接报错）
+val pluginVersion = version.toString()
+
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
@@ -43,7 +46,7 @@ tasks {
     // plugin.yml 里的 ${version} 由这里注入，别改回 Maven 的 ${project.version}
     processResources {
         filesMatching("plugin.yml") {
-            expand(mapOf("version" to project.version.toString()))
+            expand(mapOf("version" to pluginVersion))
         }
     }
 
