@@ -1,0 +1,23 @@
+# Gradle Version Catalog
+# 依赖集中管理：build.gradle.kts 里用 `libs.xxx` 引用。
+# alias 一律 kebab-case，Kotlin DSL 访问时自动转驼峰（如 `paper-api` → `libs.paper.api`）。
+
+[versions]
+# Core
+# 保持与 pom.xml 一致的编译目标；升级 paper-api 必须同步调整 plugin.yml 的 api-version
+paper-api = "1.20.1-R0.1-SNAPSHOT"
+slimefun4 = "2024.3"
+lombok = "1.18.48"   # 原 1.18.34，不兼容 JDK 23+（TypeTag UNKNOWN）
+
+# Plugins
+shadow = "9.6.1"
+run-paper = "3.1.0"
+
+[libraries]
+paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper-api" }
+slimefun4 = { module = "com.github.SlimefunGuguProject:Slimefun4", version.ref = "slimefun4" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }

@@ -1,7 +1,7 @@
 name: ClayTech-Fixed
 main: cn.claycoffee.clayTech.ClayTech
-version: ${project.version}
-api-version: 1.20
+version: ${version}
+api-version: "1.20"
 authors: [ ClayCoffee, balugaq ]
 depend: [ Slimefun ]
 softdepend: [ WorldBorder ]

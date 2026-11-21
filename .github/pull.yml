@@ -1,0 +1,10 @@
+version: "1"
+rules:
+  # 本仓库是 ClayCoffee/ClayTech 的修复 fork，自动同步上游 master
+  - base: master
+    upstream: ClayCoffee:master
+    mergeMethod: merge
+    assignees:
+      - balugaq
+    conflictReviewers:
+      - balugaq
